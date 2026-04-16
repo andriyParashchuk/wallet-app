@@ -1,92 +1,257 @@
-body {
+
+*, *::before, *::after {
+  box-sizing: border-box;
   margin: 0;
-  background: #0f0f10;
-  color: #fff;
-  font-family: sans-serif;
+  padding: 0;
+}
+
+body {
+  background: #f2f2f7;
+  font-family: -apple-system, sans-serif;
+  color: #000;
 }
 
 .container {
-  padding: 16px;
+  max-width: 350px;
+  margin: 0 auto;
+  padding: 15px;
+}
+
+.box-grid {
+  display: flex;
+  width: 100%;
+  height: 156px;
+  gap: 5px;
+  overflow: hidden;
+  margin-bottom: 24px;
+}
+
+.left-side {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  gap: 5px;
+}
+
+.right-side {
+  width: 50%;
+}
+
+.box {
+  background: #fff;
+  border-radius: 8px;
+  flex: 1;
+  height: 100%;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.05);
 }
 
 .card {
-  background: #1c1c1e;
-  border-radius: 16px;
-  padding: 16px;
-  margin-bottom: 20px;
+  padding: 10px;
+  position: relative;
+}
+
+.payment-card {
+  height: 100%;
+}
+
+.points-card {
+  padding-top: 20px;
+}
+
+.balance-amount {
+  font-size: 24px;
+  line-height: 1em;
+  font-weight: 600;
+  margin-bottom: 5px;
 }
 
 .label {
-  font-size: 12px;
+  margin-bottom: 5px;
+  font-size: 13px;
+  line-height: 1em;
+  color: #000;
+}
+
+.sub {
+  font-size: 14px;
+  line-height: 16px;
   color: #8e8e93;
 }
 
-.amount {
-  font-size: 32px;
+.circle {
+  position: absolute;
+  right: 10px;
+  bottom: 10px;
+  width: 60px;
+  height: 60px;
+  background: #eeeeef;
+  color: #000;
+  border-radius: 50%;
+  font-size: 25px;
+  line-height: 60px;
+  text-align: center;
 }
 
-.row {
-  display: flex;
-  justify-content: space-between;
-  margin-top: 10px;
+.section-title {
+  font-size: 20px;
+  line-height: 1em;
+  font-weight: 600;
+  margin-bottom: 7px;
 }
 
-.status {
-  background: #2c2c2e;
-  padding: 10px;
-  border-radius: 10px;
-  margin: 10px 0;
-}
-
-.points {
-  display: flex;
-  justify-content: space-between;
+.list {
+  background: #fff;
+  border-radius: 8px;
+  overflow: hidden;
+  padding: 2px 8px 2px 10px;
 }
 
 .item {
   display: flex;
   align-items: center;
   text-decoration: none;
-  color: white;
-  padding: 12px 0;
-  border-bottom: 1px solid #2c2c2e;
+  color: inherit;
+  border-bottom: 1px solid #e5e5ea;
 }
 
-.icon {
+.item:last-child {
+  border-bottom: none;
+}
+
+.logo {
+  display: block;
   width: 40px;
   height: 40px;
-  background: #2c2c2e;
-  border-radius: 50%;
-  margin-right: 12px;
+  line-height: 40px;
+  font-size: 16px;
+  border-radius: 4px;
+  text-align: center; 
+  background-color: #585858;
+  color: #fff;
 }
 
 .info {
+  padding: 8px 5px 8px 12px;
   flex: 1;
 }
 
+.points-value {
+  font-size: 18px;
+  font-weight: 600;
+  margin-top: 6px;
+}
+
+.icon {
+  width: 36px;
+  height: 36px;
+  border-radius: 8px;
+  background: linear-gradient(135deg, #ff9f0a, #ff375f);
+  margin-right: 12px;
+}
+
+.row-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2px;
+}
+
 .name {
+  font-size: 15px;
+  font-weight: 600;
+}
+
+.amount {
+  font-size: 15px;
   font-weight: 500;
 }
 
 .desc {
-  font-size: 13px;
+  font-size: 12px;
   color: #8e8e93;
+  margin-bottom: 2px;
+  display: flex;
+  justify-content: space-between;
 }
 
 .meta {
   font-size: 12px;
-  color: #636366;
+  color: #c7c7cc;
+  margin-bottom: 2px;
 }
 
-.amount {
-  font-weight: 500;
+.percentage {
+  font-size: 10px;
+  line-height: 12px;
+  background-color: #f2f2f6;
+  padding: 0 4px;
+  border-radius: 4px;
+}
+
+.arrow {
+  font-size: 18px;
+  color: #c7c7cc;
+  margin-top: -38px;
 }
 
 .back-btn {
   background: none;
   border: none;
-  color: #0a84ff;
-  font-size: 16px;
-  margin-bottom: 16px;
+  color: #007aff;
+  font-size: 24px;
+  line-height: 1em;
+  padding: 15px;
+  margin: -15px 0 0 -15px;
   cursor: pointer;
+}
+
+.details-header {
+  text-align: center;
+  margin-bottom: 24px;
+}
+
+.details-amount {
+  font-size: 54px;
+  line-height: 1em;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+.details-name {
+  font-size: 15px;
+  line-height: 1em;
+  color: #8e8e93;
+  margin-bottom: 8px;
+  font-weight: 500;
+}
+
+.details-card {
+  background: #fff;
+  border-radius: 8px;
+  overflow: hidden;
+  padding: 0 6px;
+}
+
+.details-row {
+  padding: 14px 10px;
+  font-size: 16px;
+  line-height: 18px;
+  font-weight: 500;
+  border-bottom: 1px solid #e5e5ea;
+  color: #000;
+}
+
+.details-row:last-child {
+  border-bottom: none;
+  display: flex;
+  justify-content: space-between;
+}
+
+.loading {
+  text-align: center;
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  transform: translateY(50%);
 }

@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useMemo } from "react";
 import { fetchTransactions } from "./api";
 import type { Transaction } from "./types";
 import { TransactionItem } from "../components/TransactionItem";
@@ -11,15 +11,20 @@ export const TransactionsList = () => {
     fetchTransactions().then(setData);
   }, []);
 
+  const items = useMemo(() => {
+    return data.slice(0, 10).map((t) => (
+      <TransactionItem key={t.id} transaction={t} />
+    ));
+  }, [data]);
+
+  if (!data.length) return <div className="loading">Loading...</div>;
+
   return (
     <div className="container">
       <BalanceCard />
 
-      <h2>Latest Transactions</h2>
-
-      {data.slice(0, 10).map((t) => (
-        <TransactionItem key={t.id} transaction={t} />
-      ))}
+      <h2 className="section-title">Latest Transactions</h2>
+      <div className="list">{items}</div>
     </div>
   );
 };

@@ -1,5 +1,5 @@
 export const formatAmount = (amount: number, type: "credit" | "payment") => {
-  return type === "payment" ? `+ $${amount.toFixed(2)}` : `- $${amount.toFixed(2)}`;
+  return type === "payment" ? `+ $${amount.toFixed(2)}` : `$${amount.toFixed(2)}`;
 };
 
 export const formatDate = (date: string) => {

@@ -21,34 +21,27 @@ export const TransactionDetails = () => {
   return (
     <div className="container">
       <button className="back-btn" onClick={() => navigate(-1)}>
-        ← Back
+        <i className="fa-solid fa-angle-left"></i>
       </button>
 
-      <h1>{formatAmount(transaction.amount, transaction.type)}</h1>
-      <p>{transaction.name}</p>
+      <div className="details-header">
+        <div className="details-amount">
+          {formatAmount(transaction.amount, transaction.type)}
+        </div>
+        <p className="details-name">{transaction.name}</p>
+        <p className="details-name">{formatDate(transaction.date)}</p>
+      </div>
 
-      <div className="card">
-        <div className="row">
-          <span>Status</span>
-          <span>{transaction.pending ? "Pending" : "Completed"}</span>
+      <div className="details-card">
+        <div className="details-row">
+          <span>Status: {transaction.pending ? 'Pending' : 'Approved'}</span>
+          <div className="sub">{transaction.description}</div>
         </div>
 
-        <div className="row">
-          <span>Description</span>
-          <span>{transaction.description}</span>
+        <div className="details-row">
+          <span>Total</span>
+          <span>{formatAmount(transaction.amount, transaction.type)}</span>
         </div>
-
-        <div className="row">
-          <span>Date</span>
-          <span>{formatDate(transaction.date)}</span>
-        </div>
-
-        {transaction.authorizedUser && (
-          <div className="row">
-            <span>Authorized User</span>
-            <span>{transaction.authorizedUser}</span>
-          </div>
-        )}
       </div>
     </div>
   );

@@ -1,3 +1,4 @@
+import React from "react";
 import { Link } from "react-router-dom";
 import type { Transaction } from "../features/types";
 import { formatAmount, formatDate } from "../features/utils";
@@ -6,17 +7,27 @@ interface Props {
   transaction: Transaction;
 }
 
-export const TransactionItem = ({ transaction }: Props) => {
+export const TransactionItem = React.memo(({ transaction }: Props) => {
   return (
     <Link to={`/transaction/${transaction.id}`} className="item">
-      <div className="icon" />
+      <div className="logo">
+        <i className="fa-brands fa-apple"></i>
+      </div>
 
       <div className="info">
-        <p className="name">{transaction.name}</p>
+        <div className="row-top">
+          <p className="name">{transaction.name}</p>
+          <p className="amount">
+            {formatAmount(transaction.amount, transaction.type)}
+          </p>
+        </div>
 
         <p className="desc">
-          {transaction.pending && <span>Pending — </span>}
-          {transaction.description}
+          <span>
+            {transaction.pending && <span>Pending — </span>}
+            {transaction.description}
+          </span>
+          <span className="percentage">3%</span>
         </p>
 
         <p className="meta">
@@ -26,9 +37,9 @@ export const TransactionItem = ({ transaction }: Props) => {
         </p>
       </div>
 
-      <div className="amount">
-        {formatAmount(transaction.amount, transaction.type)}
+      <div className="arrow">
+        <i className="fa-solid fa-angle-right"></i>
       </div>
     </Link>
   );
-};
+});
