@@ -1,3 +1,10 @@
+export const formatCurrency = (value: number) => {
+  return value.toLocaleString("en-US", {
+    minimumFractionDigits: 2,
+    maximumFractionDigits: 2,
+  });
+};
+
 export const formatAmount = (amount: number, type: "credit" | "payment") => {
   return type === "payment" ? `+ $${amount.toFixed(2)}` : `$${amount.toFixed(2)}`;
 };
@@ -13,7 +20,8 @@ export const formatDate = (date: string) => {
 
   return d.toLocaleDateString("en-US", {
     month: "2-digit",
-    day: "2-digit"
+    day: "2-digit",
+    year: "2-digit"
   });
 };
 
@@ -21,12 +29,13 @@ export const calculatePoints = (day: number): number => {
   if (day === 1) return 2;
   if (day === 2) return 3;
 
-  let prev2 = 2;
-  let prev1 = 3;
+  let prev2 = 2; // day 1
+  let prev1 = 3; // day 2
   let current = 0;
 
   for (let i = 3; i <= day; i++) {
-    current = prev1 * 0.6 + prev2;
+    current = prev2 + prev1 * 0.6;
+
     prev2 = prev1;
     prev1 = current;
   }

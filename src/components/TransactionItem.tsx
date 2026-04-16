@@ -27,7 +27,6 @@ export const TransactionItem = React.memo(({ transaction }: Props) => {
             {transaction.pending && <span>Pending — </span>}
             {transaction.description}
           </span>
-          <span className="percentage">3%</span>
         </p>
 
         <p className="meta">

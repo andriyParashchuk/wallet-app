@@ -1,4 +1,4 @@
-import { calculatePoints, formatPoints } from "../features/utils";
+import { calculatePoints, formatPoints, formatCurrency } from "../features/utils";
 
 export const BalanceCard = () => {
   const limit = 1500;
@@ -15,7 +15,7 @@ export const BalanceCard = () => {
           <div className="card">
             <p className="label">Card Balance</p>
             <strong className="balance-amount">${balance.toFixed(2)}</strong>
-            <p className="sub">${available.toFixed(2)} Available</p>
+            <p className="sub">${formatCurrency(available)} Available</p>
           </div>
         </div>
         <div className="box">
