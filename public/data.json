@@ -1,0 +1,93 @@
+[
+  {
+    "id": "1",
+    "name": "Apple",
+    "amount": 14.06,
+    "type": "credit",
+    "description": "Card Number Used",
+    "date": "2026-04-12",
+    "pending": true,
+    "authorizedUser": "Diana"
+  },
+  {
+    "id": "2",
+    "name": "Target",
+    "amount": 89.44,
+    "type": "credit",
+    "description": "Groceries",
+    "date": "2026-04-11",
+    "pending": false
+  },
+  {
+    "id": "3",
+    "name": "Starbucks",
+    "amount": 6.25,
+    "type": "credit",
+    "description": "Coffee",
+    "date": "2026-04-10",
+    "pending": false
+  },
+  {
+    "id": "4",
+    "name": "IKEA",
+    "amount": 120,
+    "type": "payment",
+    "description": "Furniture",
+    "date": "2026-04-09",
+    "pending": false
+  },
+  {
+    "id": "5",
+    "name": "Amazon",
+    "amount": 45.99,
+    "type": "credit",
+    "description": "Online Shopping",
+    "date": "2026-04-08",
+    "pending": false
+  },
+  {
+    "id": "6",
+    "name": "Netflix",
+    "amount": 15.99,
+    "type": "credit",
+    "description": "Subscription",
+    "date": "2026-04-07",
+    "pending": false
+  },
+  {
+    "id": "7",
+    "name": "Uber",
+    "amount": 23.5,
+    "type": "credit",
+    "description": "Ride",
+    "date": "2026-04-06",
+    "pending": false
+  },
+  {
+    "id": "8",
+    "name": "McDonald's",
+    "amount": 12.75,
+    "type": "credit",
+    "description": "Food",
+    "date": "2026-04-05",
+    "pending": false
+  },
+  {
+    "id": "9",
+    "name": "Spotify",
+    "amount": 9.99,
+    "type": "credit",
+    "description": "Music Subscription",
+    "date": "2026-04-04",
+    "pending": false
+  },
+  {
+    "id": "10",
+    "name": "Zara",
+    "amount": 67.2,
+    "type": "credit",
+    "description": "Clothing",
+    "date": "2026-04-03",
+    "pending": false
+  }
+]
